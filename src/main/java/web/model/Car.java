@@ -8,17 +8,18 @@ public class Car {
     public Car() {
     }
 
-    public Car(int number, String model, String series) { //id
+    public Car( int number, String model, String series) {
+        this.id = number;
         this.model = model;
         this.series = series;
-        this.id = number;
+
     }
 
-    public String getName() {
+    public String getModel() {
         return model;
     }
 
-    public void setName(String model) {
+    public void setModel(String model) {
         this.model = model;
     }
 
@@ -37,4 +38,12 @@ public class Car {
     public void setId(int number) {
         this.id = number;
     }
+//    @Override
+//    public String toString() {
+//        return "Car{" +
+//                "model='" + model + '\'' +
+//                ", series='" + series + '\'' +
+//                ", id=" + id +
+//                '}';
+//    }
 }
