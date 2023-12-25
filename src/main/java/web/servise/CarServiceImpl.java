@@ -11,18 +11,18 @@ import java.util.stream.Collectors;
 public class CarServiceImpl implements CarService {
 
     private static int CAR_COUNT;
+    private final List<Car> cars = new ArrayList<>();;
+    {
+        cars.add(new Car(++CAR_COUNT, "BMW", "3"));
+        cars.add(new Car(++CAR_COUNT, "Mazda ", "b"));
+        cars.add(new Car(++CAR_COUNT, "Toyota Camry", "XV10"));
+        cars.add(new Car(++CAR_COUNT, "Lada Niva", "2121"));
+        cars.add(new Car(++CAR_COUNT, "Opel Astra", "F"));
+
+    }
+
     @Override
     public List<Car> printCar(Integer count) {
-        List<Car> printCar;
-        {
-            printCar = new ArrayList<>();
-            printCar.add(new Car(++CAR_COUNT, "CRV", "3"));
-            printCar.add(new Car(++CAR_COUNT, "Mazda ", "b"));
-            printCar.add(new Car(++CAR_COUNT, "Toyota Camry", "XV10"));
-            printCar.add(new Car(++CAR_COUNT, "Lada Niva", "2121"));
-            printCar.add(new Car(++CAR_COUNT, "Opel Astra", "F"));
-
-        }
-        return printCar.stream().limit(count).collect(Collectors.toList());
+        return cars.stream().limit(count).collect(Collectors.toList());
     }
 }
